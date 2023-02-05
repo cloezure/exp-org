@@ -1,0 +1,71 @@
+* Outliner
+(TAB (hidde show)) (Shift-TAB (свернуть всё, развернуть))
+Text text text!
+** more items (M-RET (clone))
+** yet more
+
+* Markup
+*Bold*, /italic/, =verbatim=, +strikethrough+
+
+- bulleted
+- list
+- items
+
+(C-c C-l (paste link))
+(look-like [[link\][text\]])
+(C-c C-o (open link))
+[[https://www.google.com][Google!]]
+
+Можно ссылатся не только на сайты, но и на файлы!
+
+
+* Tables
+
+( объявляем столбцы через | )
+( пишем на новый строке |- и жмём TAB)
+
+| Some | Data           |
+|------+----------------|
+|   34 | shut the door  |
+|   12 | buckle my shoe |
+|      |                |
+|      |                |
+
+* Exports to other formats
+C-c C-e для экспорта
+
+#+TITLE: A Gentle Introduction to Org-mode
+#+OPTIONS: toc:nil
+
+* Source code
+
+(C-c C-c чтобы запустить) 
+#+BEGIN_SRC scheme
+  (define (fact n)
+    (if (zero? n)
+	1
+	(* n (fact (sub1 n)))))
+
+  (fact 5)
+#+END_SRC
+
+#+RESULT:
+: 120
+
+* Latex integration
+
+- Characters: \alpha \rightarrow \beta
+- $0(n \log n)$
+
+\begin{align*}
+ 3 * 2 + &= 6 + 1 \\
+         &= 7
+\end{align*}
+
+* Tasks
+( чтобы превратить DONE в CLOSED нажать C-c C-t)
+** DONE Start org tutorial
+** TODO some do?
+DEADLINE: <2023-02-05 Вс>
+(C-c C-d чтобы выбрать дату)
+
